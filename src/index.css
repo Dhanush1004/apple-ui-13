@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --apple-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--apple-font);
+    background-color: #000000;
+    color: #f5f5f7;
+  }
+
+  body {
+    font-family: var(--apple-font);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #000000;
+    color: #f5f5f7;
+    overflow-x: hidden;
+  }
+}
+
+/* Apple typography helpers */
+.font-apple {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Apple Nav Glass effect */
+.apple-glass-nav {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.apple-glass-subnav {
+  background-color: rgba(22, 22, 23, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* Apple Link hover effect */
+.apple-nav-link {
+  color: #d1d1d6;
+  transition: color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.apple-nav-link:hover {
+  color: #ffffff;
+}
+
+/* Green highlight gradient used in AirPods Pro headers */
+.apple-green-gradient {
+  background: linear-gradient(135deg, #28cd41 0%, #00ff5f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Apple section title styling */
+.apple-eyebrow {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.012em;
+  color: #86868b;
+}
+
+.apple-headline {
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+/* Sound wave animations */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 4s ease-in-out infinite;
+}
+
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float-subtle 5s ease-in-out infinite;
+}
+
+/* Apple button primary */
+.apple-btn-primary {
+  background-color: #0071e3;
+  color: #ffffff;
+  border-radius: 980px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.apple-btn-primary:hover {
+  background-color: #0077ed;
+  transform: scale(1.02);
+}
+
+.apple-btn-primary:active {
+  transform: scale(0.98);
+}
